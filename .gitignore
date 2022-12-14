@@ -3,6 +3,10 @@
 .Rhistory
 .Rproj.user
 
+# OS generated
+.DS_Store
+.DS_Store?
+
 # md & tex
 *.fdb_latexmk
 *.fls
