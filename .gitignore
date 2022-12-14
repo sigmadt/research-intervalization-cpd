@@ -1,0 +1,11 @@
+# RStudio related
+.RData
+.Rhistory
+.Rproj.user
+
+# md & tex
+*.fdb_latexmk
+*.fls
+*.knit.md
+*.log
+*.out
