@@ -7,7 +7,7 @@ source("utils.R")
 
 theme_set(theme_bw())
 
-# SIGNATURE: vector -> vector -> int
+# SIGNATURE: vector -> vector -> float
 
 # 1. HD-quantile based
 # 1.1 Median

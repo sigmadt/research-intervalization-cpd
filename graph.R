@@ -2,8 +2,6 @@ library("ggplot2")
 library("cowplot")
 
 source("gen.R")
-
-
 # plot cost function behavior for every partition starting from cp with step
 cf_build_plot <- function(res) {
   p_1 <- ggplot(res[1:300, , drop = FALSE], aes(x = it, y = cf)) +
@@ -24,6 +22,7 @@ build_plot_dist <- function(dist_name) {
     print("Available distributions:    ")
     print("- N(5, 1)  + mixt + N(17, 1)")
     print("- U(0, 10) + mixt + U(0, 20)")
+    print("- exp(0.2) + mixt + exp(5)  ")
     return("----------------------------")
   }
   g <- ggplot(get_slice_from_df(gen_data(),
