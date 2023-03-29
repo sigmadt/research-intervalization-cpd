@@ -60,3 +60,13 @@ add_growth_rate <- function(df) {
   df['rel'] <- rel
   df
 }
+
+# prettify change interval
+ci_prettify <- function(ci) {
+  paste('(', as.character(ci[1]), ';', as.character(tail(ci, 1)), ')')
+}
+
+# prettify long floats for df
+df_prettify <- function(df, r=2) {
+  data.frame(lapply(df, function(y) if(is.numeric(y)) round(y, r) else y)) 
+}
