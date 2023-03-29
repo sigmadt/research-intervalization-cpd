@@ -4,14 +4,14 @@ library("comprehenr")
 
 # intersection / union
 iou_pen <- function(ci_true, ci_est) {
-    if (ci_true[-1] < ci_est[1]) {
+    if (tail(ci_true, n=1) < ci_est[1]) {
       return(0)
     } 
-    if (ci_est[-1] < ci_true[1]) {
+    if (tail(ci_est, n=1) < ci_true[1]) {
       return(0)
     }
-    inter <- min(ci_true[-1], ci_est[-1]) - max(ci_true[1], ci_est[1])
-    union <- max(ci_true[-1], ci_est[-1]) - min(ci_true[1], ci_est[1])
+    inter <- min(tail(ci_true, n=1), tail(ci_est, n=1)) - max(ci_true[1], ci_est[1])
+    union <- max(tail(ci_true, n=1), tail(ci_est, n=1)) - min(ci_true[1], ci_est[1])
     
     inter / union
 }
@@ -45,4 +45,13 @@ f1_pen <- function(ci_true, ci_est) {
   rc <- recall_pen(ci_true, ci_est)
   2 * pr * rc / (pr + rc)
 }
+
+
+pen <- list(
+  iou = iou_pen,
+  hausdorff = hausdorff_pen,
+  precision = precision_pen,
+  recall = recall_pen,
+  f1 = f1_pen
+)
 
