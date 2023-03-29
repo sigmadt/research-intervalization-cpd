@@ -109,3 +109,10 @@ dist_loc <- list(norm = c("from" = 1, "to" = 300),
                  exp = c("from" = 601, "to" = 900),
                  pareto = c("from" = 901, "to" = 1200)
                  )
+
+ci_true_loc <- list(
+  norm = c(100:200),
+  unif = c(100:200),
+  exp = c(100:200),
+  pareto = c(100:200)
+)
