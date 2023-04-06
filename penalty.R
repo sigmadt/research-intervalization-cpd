@@ -41,11 +41,12 @@ recall_pen <- function(ci_true, ci_est, th=10) {
 
 # f1-score
 f1_pen <- function(ci_true, ci_est) {
-  pr <- precision_pen(ci_true, ci_est)
-  rc <- recall_pen(ci_true, ci_est)
+  pr <- precision_pen(ci_true, ci_est, 5)
+  rc <- recall_pen(ci_true, ci_est, 5)
   2 * pr * rc / (pr + rc)
 }
 
+desc_pen <- list(hausdorff = hausdorff_pen)
 
 pen <- list(
   iou = iou_pen,
