@@ -115,3 +115,39 @@ build_plot_labeled <- function(dist_name, ci_est) {
     )
   
 }
+
+
+# given data
+build_plot_given_data <- function(df, ci_true=c(100,200), N=300) {
+  g <- ggplot(df, aes(x = seq(1, N), y = v)) +
+    geom_point() +
+    annotate(
+      "rect",
+      xmin = ci_true[1],
+      xmax = tail(ci_true, 1),
+      ymin = 0,
+      ymax = Inf,
+      alpha = 0.5,
+      fill = "blue"
+    )
+  
+  g
+}
+
+build_plot_given_data_cmp_ci <- function(df, ci_true=c(100,200), ci_est=c(150, 250)) {
+  g <- build_plot_given_data(df, ci_true)
+  
+  g +
+    annotate(
+      "rect",
+      xmin = ci_est[1],
+      xmax = tail(ci_est, 1),
+      ymin = 0,
+      ymax = Inf,
+      alpha = 0.3,
+      fill = "green"
+    )
+}
+
+
+
