@@ -63,7 +63,7 @@ add_growth_rate <- function(df) {
 
 # prettify change interval
 ci_prettify <- function(ci) {
-  paste('(', as.character(ci[1]), ';', as.character(tail(ci, 1)), ')')
+  paste('(', as.character(ci[1]), ',', as.character(tail(ci, 1)), ')')
 }
 
 # prettify long floats for df

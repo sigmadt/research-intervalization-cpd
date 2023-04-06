@@ -39,7 +39,7 @@ find_right_bound <- function(left_cp_ind, df, cost_func, step = 1) {
   data.frame(it, cf)
 }
 
-# Bounds for detectors
+
 # 2. Left
 find_left_bound <- function(right_cp_ind, df, cost_func, step = 1) {
   n <- nrow(df)
